@@ -4,20 +4,37 @@ function asyncF(name){
     return new Promise(function (resolve){
      setTimeout(function (){   //setTimeout 延迟执行 这里是为了模拟异步场景
         resolve('my name is ' + name)
-        },1000)   
+        })   
     });
 }
-function * fn(){
 
-    
+function  sum(a,b){
+    return new Promise(function(resolve){
+        setTimeout(function(){
+            resolve(a + b)
+        })
+    })
+}
 
-    for(let i =0;i<10;i++){
-        console.log(yield asyncF('leo'+i))
+function * fn(name){
+
+    /*if (yield asyncF('leo')){
+
+    }*/
+
+    if ((yield sum(3,5)) > 6){
+        console.log(yield asyncF(name))
+    }else{
+        console.log('error')
     }
+
+    /*for(let i =0;i<10;i++){
+        console.log(yield asyncF('leo'+i))
+    }*/
 
 }
 
-let  gf = fn()
+let  gf = fn('zengjian')
 
 function exec(gf,value){
     let result = gf.next(value);  //会得到一个promise

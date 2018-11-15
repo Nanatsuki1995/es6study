@@ -28,28 +28,60 @@ function User(name,age){
     console.log(user);
    
     //子类
-    function Manager(name,age,password){
-        console.log(this,'======>manager')
-        this.a='aaaa';
-    User.apply(this,[name,age]);
-    this.password = password;
+    // function Manager(name,age,password){
+    //     console.log(this,'======>manager')
+    //     this.a='aaaa';
+    // User.apply(this,[name,age]);
+    // this.password = password;
+    // }
+
+    //  //继承静态方法
+    //  Manager.__proto__ = User;    //__proto__ 实例属性
+    
+    //  //继承 prototype 方法       //prototype 构造函数的属性
+    //  Manager.prototype = User.prototype;
+
+
+class Manager extends User{
+    constructor(name,age,password){
+        super(name,age); //super将方法添加到父对象，第一行写。
+        this.password = password;
     }
-    //继承静态方法
-    Manager.__proto__ = User;    //__proto__ 实例属性
     
-    //继承 prototype 方法       //prototype 构造函数的属性
-    Manager.prototype = User.prototype;
-    
-    //添加新方法
-    Manager.prototype.changePassword = function(pwd){
-    this.password = password;
-    };
-    
+    // //添加新方法
+    // Manager.prototype.changePassword = function(pwd){
+    //     this.password = password;
+    //     };
+    changePassword(password){
+        this.password = password;
+    }
+    get info(){
+        var info = super.info
+        console.log(info);
+
+        return info + '-- new';
+    }
+}
+
+
+console.log(typeof User,typeof Manager);
+
+
     var manager = new Manager('leo',22,'123');
     
     manager.changeName('zeng jian');
     console.log(manager.info);
 
+// class I extends User{
+//     //自动加入默认constructor
+//     constructor(...arg){
+//         super(...arg)
+//     }
+// }
+
+// var me = new I('leo',28);
+
+// console.log(me)
 
 
 //     function user(){
