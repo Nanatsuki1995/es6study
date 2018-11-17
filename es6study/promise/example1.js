@@ -35,7 +35,7 @@ function asyncFun(a,b){
 asyncFun(1,'a')
     .then(function (result) {
         if (result > 2) {
-            return asyncFun(result,2)
+            return asyncFun(result,2)   //Promise返回的结果在用.then的时候也会被包装成一个Promise
         }
     },function (err) {
         console.log('first - ')
