@@ -1,3 +1,4 @@
+'use strict'
 function asyncFun(a,b,time){
 
     return new Promise(function(resolve,reject){

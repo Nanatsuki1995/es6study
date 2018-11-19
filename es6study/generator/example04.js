@@ -1,5 +1,5 @@
 'use strict';
-
+//yield只能在generator函数中使用
 function sum(a,b){
     return a + b;
 }

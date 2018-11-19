@@ -1,3 +1,4 @@
+'use strict'
 //var  promise = Promise.resolve('hello')
 
 var promise = new Promise(function (resolve,reject) {
