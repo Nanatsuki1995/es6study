@@ -7,4 +7,4 @@ function * fn(_name){
 
 let it = fn('leo');
 console.log(it.next());
-console.log(it.next('liang')); //只能通过next方式赋值
+console.log(it.next('liang')); //yield只能通过next方式赋值
