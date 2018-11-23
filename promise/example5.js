@@ -41,3 +41,4 @@ promise.then(function (result) {
 //.race返回最先执行的结果，如果内部有一个错误都不会返回resolve，而是返回reject
 
 
+
