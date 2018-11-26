@@ -21,6 +21,6 @@ promise.then(
 
 var promise2 = Promise.reject('error')
 
-promise2.then(null,function (err) {
+promise2.then(null,function (err) {     //Promise 可以通过.then进行回调函数的运算
     console.log(err)
 })
