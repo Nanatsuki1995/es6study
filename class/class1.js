@@ -5,22 +5,22 @@ function User(name,age){
     
     //静态方法
     User.gerClassName = function(){
-    return 'User';
+        return 'User';
     };
     
     User.prototype.changeName = function(name){
-    this.name = name;
+        this.name = name;
     };
     
     User.prototype.changeage = function(age){
-    this.age = age;
+        this.age = age;
     };
     
     Object.defineProperty(User.prototype,'info',{
-    get(){
-        console.log(this,'--------->')
-    return 'name:'+this.name + '| age:' + this.age;
-    }
+        get(){
+            console.log(this,'--------->')
+            return 'name:'+this.name + '| age:' + this.age;
+        }
     });
     
     var user = new User('leo',22);
@@ -67,10 +67,10 @@ class Manager extends User{
 console.log(typeof User,typeof Manager);
 
 
-    var manager = new Manager('leo',22,'123');
+var manager = new Manager('leo',22,'123');
     
-    manager.changeName('zeng jian');
-    console.log(manager.info);
+manager.changeName('zeng jian');
+console.log(manager.info);
 
 // class I extends User{
 //     //自动加入默认constructor
